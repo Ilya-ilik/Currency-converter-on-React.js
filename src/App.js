@@ -1,35 +1,32 @@
 // import logo from './logo.svg';
 import "./App.css";
-//Чтобы использовать хук useState надо его сначала обьявить как показано ниже
-import React, { useState } from "react";
+import React from "react";
+// import Test from "./components/Test";
+// import Converter_and_graph from "./components/Converter_and_graph";
+// import Dropdown from "./components/Dropdown";
+import Currency_selection from "./components/Currency_selection/Currency_selection";
 
 function App() {
-  const [value, setValue] = useState([]);
-  // Тестовая функция первой кнопки
-  let testFunction1 = () => {
-    setValue(value * 10);
-  };
-   // Тестовая функция второй кнопки
-   let testFunction2 = () => {
-    setValue(value * 100);
-  };
+  // Это данные которые мы передаем для выбора в селектор
+  const options = [
+    { value: "bitcoin (btc)", label: "Bitcoin (BTC)" },
+    { value: "ethereum (eth)", label: "Ethereum (ETH)" },
+  ];
+
+  // const options2 = [
+  //   { value2: "доллар сша (usd)", label2: "Доллар США (USD)" },
+  //   { value2: "ether (eth)", label2: "Ether (ETH)" },
+  // ];
+  // Bitcoin (BTC), Ether (ETH), US Dollar (USD)
+  // USD - Доллар США, EUR - Евро, GBP - Британский Фунт
+
   return (
     <div className="App">
-      {/* Тестовая кнопка 1 */}
-      <button onClick={testFunction1}>Тестовая кнопка 1</button>
-      {/* Тестовая кнопка 2 */}
-      <button onClick={testFunction2}>Тестовая кнопка 2</button>
-
-      {/* Этот инпут сразу выводит вводимое из инпута */}
-      <input
-        type="text"
-        placeholder="Введите число"
-        onChange={(ivent) => setValue(ivent.target.value * 100)}
-      ></input>
-      {/* Тестовый вывод состояния можно удалить! */}
-      {value}
-      {/* Значение инпута это состояние value -  value={value} */}
-      <input value={value}></input>
+      {/* <Test/> */}
+      {/* <Converter_and_graph/> */}
+      {/*  Это компонента с примером поля выбора */}
+      {/* <Dropdown placeHolder="Select..." options={options} /> */}
+      <Currency_selection placeHolder="Select..." options={options}/>
     </div>
   );
 }
