@@ -76,7 +76,7 @@ const Currency_selection = ({ placeHolder, options }) => {
   });
 
   return (
-    <div>
+    <>
       {/* Первый селектор */}
       <div className="dropdown-container">
         <div onClick={handleInputClick} className="dropdown-input">
@@ -115,15 +115,9 @@ const Currency_selection = ({ placeHolder, options }) => {
 
       <div className="first_input_glav2">
         {/* Инпут обычной валюты */}
-        <input
-          type="number"
-          className="input"
-          value={value}
-          // ref={textOut}
-        ></input>
+        <input type="number" className="input" value={value}></input>
       </div>
-      {value}
-    </div>
+    </>
   );
 };
 
